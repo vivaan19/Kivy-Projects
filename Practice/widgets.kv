@@ -1,0 +1,145 @@
+# ImagesExample:
+InfoForm:
+<InfoForm>:
+    cols: 1
+    GridLayout:
+        cols: 2
+        Label:
+            text: "Enter Your Name: "
+            size_hint:1, 1
+            font_size: "40dp"
+            # width: "200dp"
+            # height: "100dp"
+            spacing: "3dp"
+        TextInput:
+            id: name
+            size_hint: 1, 1
+            font_size: "40dp"
+            # width: "200dp"
+            # height: "85dp"
+            multiline: False
+        
+        Label:
+            text: "Age: "
+            size_hint:1, 1
+            font_size: "40dp"
+            # width: "200dp"
+            # height: "100dp"
+            spacing: "3dp"
+        TextInput:
+            id: age
+            size_hint: 1, 1
+            font_size: "40dp"
+            # width: "200dp"
+            # height: "85dp"
+            multiline: False
+        
+        Label:
+            text: "Likes: "
+            size_hint:1, 1
+            font_size: "40dp"
+            # width: "200dp"
+            # height: "100dp"
+            spacing: "3dp"
+        TextInput:
+            id: likes
+            size_hint: 1, 1
+            font_size: "40dp"
+            # width: "200dp"
+            # height: "85dp"
+            multiline: False
+            spacing: "3dp"
+    Button:
+        text: "Submit Details"
+        size_hint: 1, 1
+        # height: "100dp"
+        on_press: root.submit(self, name, age, likes)
+    Label: 
+        text: root.sub
+        font_size: "30dp"
+    # Label: 
+    #     text: "Ram"
+<ImagesExample@GridLayout>:
+    cols: 3
+    Image:
+        source: "images/cake.jpg"
+        spacing: "5dp"
+    Image:
+        source: "images/cake.jpg"
+        allow_stretch: True
+    # Image:
+    #     source: "images/lab_logo.png"
+    #     allow_stretch: True
+    # Image:
+    #     source: "images/lab_separator.png"
+
+<WidgetsEx>:
+    cols: 3
+    ToggleButton:
+        text: "OFF"
+        on_state: root.my_toggle(self) 
+        size_hint: None, 1
+        width: "100dp"
+
+    Button:
+        text: "Count"
+        on_press: root.click()
+        disabled: not root.count_enable
+        # size_hint: 1, 1
+        # width: "100dp"
+    BoxLayout:
+        Label:
+            text: root.text
+            font_name: "fonts/Technology.ttf"
+            font_size: "90dp"
+            color: 1, .5, .5, 1
+            size_hint: 1, 1
+            # width: "100dp"
+        Button: 
+            text: "Reset" 
+            on_press: root.reset()
+
+    Switch:
+        id: my_switch
+        active: True
+        # on_active: root.my_switch(self)
+        size_hint: None, 1
+        width: "100dp"
+        # height: "100dp"
+
+
+    Slider:
+        id: my_slider
+        min: 0
+        max: 100
+        value: 50
+        orientation: "vertical"
+        disabled: not my_switch.active
+        size_hint: 1, 1
+        # width: "100dp"
+        # on_value: root.my_slider(self)
+    BoxLayout:
+        orientation: "vertical"
+        Label:
+            text: str(int(my_slider.value))
+            font_name: "fonts/Technology.ttf"
+            font_size: "90dp"
+            color: 1, .5, .5, 1
+            size_hint: 1, 1
+            # spacing: "5dp"
+            # width: "100dp"
+        ProgressBar:
+            max: 100
+            value: my_slider.value
+            # size_hint: None, 1
+            # width: "250dp"
+            # padding: ["0dp", "10dp"]
+    TextInput:
+        id: txt_inp
+        size_hint: None,1
+        # height: "00dp"
+        width: "100dp"
+        multiline: False
+        on_text_validate: root.text_validate(self)
+    Label:
+        text: root.input_str    

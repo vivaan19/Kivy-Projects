@@ -1,0 +1,99 @@
+# Scroll:
+PageLayoutExample:
+
+<PageLayoutExample@PageLayout>:
+    MainWidget:
+    Box:
+    AnchorLayout:
+    Grid:
+    
+# !!!!!!!!!!!!!!!!!!!This is the main widget!!!!!!!!!!!!!!
+<MainWidget>:
+    Button:
+        text: "Hello"
+        size: "40dp", "50dp"
+        pos: "100dp", "200dp"
+    Button:
+        text: "Hello2"
+        size: "100dp", "50dp"
+        pos: "300dp", "100dp"
+    Label:
+        text: "Hello2"
+        size: "100dp", "50dp"
+        pos: "400dp", "100dp"
+        color: .8, 0, 0, 1
+
+# !!!!!!!!!!!this is a box layout!!!!!!!!!!!!!!!
+<Box>:
+    # orientation: ""
+    Button:
+        text:"A"
+        size_hint: .5, .5
+        # size: "100dp", "100dp"
+        # width: "100dp"
+        # height: "100dp"
+        # x, center_x, right
+        # y, center_y, top
+        pos_hint: {"right":1}
+    BoxLayout:
+        orientation:"vertical"
+        spacing: "5dp"
+        Button:
+            text:"B1"
+        Button:
+            text:"B2"
+        Button:
+            text:"B3"
+        Button:
+            text:"B4"
+        Button:
+            text:"B5"
+    Button:
+        text:"C"
+
+# !!!!!!!!!this is AnchorLayout !!!!!!!!!!!!
+<AnchorLayout>:
+    # right, left, center
+    anchor_x: "right"
+    # top, botton, center
+    anchor_y: "center"
+    BoxLayout:
+        # orientation:
+        size_hint: .5, .5 
+        Button:
+            text:"A" 
+            
+        Button:
+            text:"B" 
+
+# !!!!!!!!!this is grid layout !!!!!!!!!!!!
+<Grid@GridLayout>:
+    # rows
+    # cols 
+    rows: 2
+    # cols: 2
+    Button:
+        text:"1"
+        size_hint: None, .3
+        width: "100dp"
+    Button:
+        text:"2"
+    Button:
+        text:"3"
+        
+    Button:
+        text:"4"
+        size_hint: None, .3
+        width: "100dp"
+    Button:
+        text:"5"
+
+# !!!!!!!!!!!!!! this is stack layout !!!!!!!!!!!!!!
+#<StackLayout>:
+
+<Scroll@ScrollView>:
+    StackLayoutExample:
+        size_hint: 1, None
+        height: self.minimum_height
+
+        
